@@ -1,0 +1,87 @@
+﻿@using Prueba1.Views.ViewModels
+@using Kendo.Mvc.UI
+@using Prueba1.Enums
+ 
+@model PersonStringViewModel
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+        
+<h1>@ViewData["stringInicial1"]</h1>
+<br />
+<h1>@(ViewBag.stringInicial) abc</h1>
+
+<h1>@Resources.Resources.Copy</h1>
+
+@if (Model.myPerson.Firstname != "Carlitos"){
+    @:"AbcHola"
+}
+
+@Model.myString
+<br />
+@Model.myPerson.Firstname
+<br />
+@Model.myPerson.Surname
+<br />
+
+@using (Html.BeginForm()) {
+    <script type="text/javascript">
+        queso = "QuesoGloba";
+        $(document).ready(function () {
+            var varbiable1 = "Hola";
+
+            $("#dropdownLoco").click(function () {
+                var varbiable2 = "Hola";
+
+
+                myConsoleLog();
+                console.log($(this)); //Objecto Jquery
+                console.log($(this)[0]); //Objecto Javascript
+                console.log($(this).get(0)); //Objecto Javascript
+                console.log(varbiable1);
+
+                $("a.dropdown-item").each(function () {
+                    console.log($(this));
+                    console.log(this);
+                });
+            });
+        });
+
+        function myConsoleLog() {
+            console.log("DropDownClick");
+        }
+    </script>
+    <script src="~/Scripts/newJs.js" type="text/javascript"></script>
+    <script>
+        console.log(queso);
+    </script>
+    <div class="col-xs-12">
+        <div  id="dropdownLoco" class="col-xs-6" onclick="javascript: myConsoleLog();">
+            Hola que tal    
+        </div>
+        <div class="col-xs-6 miClasePrincipal quesito" @*style="height:23px"*@>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" name="queso" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+            <div ></div>
+        </div>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.myPerson.Firstname)
+        @Html.TextBoxFor(m => m.myPerson.Surname)
+        @Html.EnumDropDownListFor(m => m.myEnum)
+    </div>
+    @*@Html.Kendo()*@
+
+    <input type="submit" value="Enviar" />
+}
+
