@@ -20,9 +20,9 @@ namespace Prueba1.Controllers
         {
             var person = new Person()
             {
-                Firstname = "Carlitosss",
-                Surname = "Tevez",
-                Id = Guid.NewGuid()
+                Firstname   = "Carlitosss",
+                Surname     = "Tevez",
+                Id          = Guid.NewGuid()
             };
 
             //using (var db = new PersonContext("testDB"))
@@ -32,7 +32,7 @@ namespace Prueba1.Controllers
             //                              ).ToList();
             //}
 
-            ViewData["stringInicial1"]   = "Index";
+            ViewData["stringInicial1"]  = "Index";
             ViewBag.stringInicial       = "IndexViewBag";
             //string model = "Index";
             return View("Home", new PersonStringViewModel() { myPerson = person, myEnum = Enums.MyLindoEnum.Mandioca });
@@ -75,9 +75,9 @@ namespace Prueba1.Controllers
 
             var person = new Person()
             {
-                Firstname = "Carlitos",
-                Surname = "Tevez",
-                Id = Guid.NewGuid()
+                Firstname   = "Carlitos",
+                Surname     = "Tevez",
+                Id          = Guid.NewGuid()
             };
 
             dimanic.Add(person);
@@ -145,7 +145,7 @@ namespace Prueba1.Controllers
                 //Manejo de la exception.
             }
 
-            return PartialView("Home", persons);
+            return PartialView("Home");
         }
 
         public ActionResult NewPerson()
@@ -191,7 +191,7 @@ namespace Prueba1.Controllers
                 //Manejo de la exception.
             }
 
-            return PartialView("Home", persons);
+            return PartialView("Home");
         }
 
         public ActionResult EditServices()
@@ -232,7 +232,7 @@ namespace Prueba1.Controllers
                 //Manejo de la exception.
             }
 
-            return PartialView("Home", persons);
+            return PartialView("Home");
         }
 
         public ActionResult DeleteServices()
@@ -271,7 +271,51 @@ namespace Prueba1.Controllers
                 //Manejo de la exception.
             }
 
-            return PartialView("Home", persons);
+            return PartialView("Home");
+        }
+
+        public ActionResult ManualAddAuditServices()
+        {
+            var persons = new List<Person>();
+
+            try
+            {
+                using (var context = DbContextFactory.Create())
+                {
+                    var personService = new PersonService(context);
+
+                    var personGetResult = personService.GetAll();
+
+                    if (personGetResult.Result == Results.Error || personGetResult.Result == Results.Error)
+                    {
+                        throw new Exception(personGetResult.ResultErrorMessage);
+                    }
+
+                    persons = personGetResult.ResultData;
+
+                    var person = persons.FirstOrDefault();
+
+                    var newPersonAudit = new PersonAudit()
+                    {
+                        AuditDate       = DateTime.Now,
+                        Denomination    = "Queso, Quesito",
+                        Firstname       = "Quesito",
+                        Surname         = "Queso",
+                        UserId          = Guid.Empty,
+                        Person          = person
+                    };
+
+                    person.PersonAudits.Add(newPersonAudit);
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                //Manejo de la exception.
+            }
+
+            return PartialView("Home");
         }
 
     }
