@@ -31,6 +31,7 @@ namespace DAL.Entities
 
         public DateTime? DeleteDate { get; set; }
 
-        public List<PersonAudit> PersonAudits { get; set; }
+        public virtual ICollection<PersonAudit> PersonAudits { get; set; }
+
     }
 }

@@ -284,7 +284,7 @@ namespace Prueba1.Controllers
                 {
                     var personService = new PersonService(context);
 
-                    var personGetResult = personService.GetAll();
+                    var personGetResult = personService.GetAll("PersonAudits");
 
                     if (personGetResult.Result == Results.Error || personGetResult.Result == Results.Error)
                     {
