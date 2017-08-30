@@ -13,7 +13,7 @@ namespace DAL.Entities
         {
             this.PersonAudits = new List<PersonAudit>();
         }
-
+        
         [Key]
         public Guid Id { get; set; }
 
