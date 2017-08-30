@@ -285,6 +285,7 @@ namespace Prueba1.Controllers
                     var personService = new PersonService(context);
 
                     var personGetResult = personService.GetAll("PersonAudits");
+                    //var personGetResult = personService.Get((where => where.PersonAudits.Where(s => s.Denomination == "Perro").Any()), "PersonAudits");
 
                     if (personGetResult.Result == Results.Error || personGetResult.Result == Results.Error)
                     {
