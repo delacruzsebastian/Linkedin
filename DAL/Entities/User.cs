@@ -5,9 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.Enums;
 using DAL.Interfaces;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DAL.Entities
 {
+    [Table("User")]
     public class User : IHeadData, ISoftDeleted
     {
         public User()
@@ -15,6 +17,7 @@ namespace DAL.Entities
             this.UserAudits = new List<UserAudit>();
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         public string Firstname { get; set; }
         public string Surname { get; set; }
