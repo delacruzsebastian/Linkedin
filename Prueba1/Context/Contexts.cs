@@ -21,6 +21,9 @@ namespace Prueba1.Context
         IDbSet<Person> persons;
         public IDbSet<Person> Persons => persons ?? (persons = base.Set<Person>());
 
+        IDbSet<User> users;
+        public IDbSet<User> Users => users ?? (users = base.Set<User>());
+
         #endregion
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

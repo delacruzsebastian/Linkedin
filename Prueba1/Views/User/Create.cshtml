@@ -1,0 +1,60 @@
+﻿@using DAL.Entities
+
+@model User
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="col-md-6">
+        @Html.LabelFor(u => u.Firstname)
+        @Html.TextBoxFor(u => u.Firstname)
+        <br />
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(u => u.Surname)
+        @Html.TextBoxFor(u => u.Surname)
+        <br />
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(u => u.Denomination)
+        @Html.TextBoxFor(u => u.Denomination)
+        <br />
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(u => u.Username)
+        @Html.TextBoxFor(u => u.Username)
+        <br />
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(u => u.Email)
+        @Html.TextBoxFor(u => u.Email)
+        <br />
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(u => u.Password)
+        @Html.TextBoxFor(u => u.Password)
+        <br />
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(u => u.Sex)
+        @Html.EnumDropDownListFor(u => u.Sex)
+        <br />
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(u => u.BirthDate)
+        @Html.TextBoxFor(u => u.BirthDate)
+        <br />
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(u => u.Available)
+        @Html.CheckBoxFor(u => u.Available)
+    </div>
+
+    <input type="submit" value="Enviar" />
+}
+

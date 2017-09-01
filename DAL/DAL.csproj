@@ -58,6 +58,9 @@
     <Compile Include="Context\BaseContext.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\PersonAudit.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UserAudit.cs" />
+    <Compile Include="Enums\Sex.cs" />
     <Compile Include="Interfaces\IBasicData.cs" />
     <Compile Include="Interfaces\IHeadData.cs" />
     <Compile Include="Interfaces\IKey.cs" />
@@ -69,7 +72,6 @@
     <Compile Include="Unit of work\IUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Enums\" />
     <Folder Include="Interfaces\Services\" />
   </ItemGroup>
   <ItemGroup>

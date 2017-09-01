@@ -77,5 +77,14 @@ namespace Resources {
                 return ResourceManager.GetString("Person", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuario.
+        /// </summary>
+        public static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
     }
 }
