@@ -57,12 +57,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\BaseServiceGet.cs" />
     <Compile Include="Base\BaseServiceHead.cs" />
     <Compile Include="Context\IEntitiesContext.cs" />
+    <Compile Include="CountryService.cs" />
+    <Compile Include="CountryStateService.cs" />
     <Compile Include="CustomClass\Helper.cs" />
     <Compile Include="Enums\ServiceActionType.cs" />
     <Compile Include="IdDescription.cs" />
     <Compile Include="PersonService.cs" />
+    <Compile Include="ProjectService.cs" />
+    <Compile Include="ProjectUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceResult.cs" />
     <Compile Include="UserService.cs" />

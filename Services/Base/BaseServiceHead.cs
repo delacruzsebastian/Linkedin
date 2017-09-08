@@ -233,7 +233,8 @@
                     }
 
                     // Valido cambios y agreo auditoria en entidades relacionadas
-                    this.CreateRelatedEntitiesAudits(entityDB, updateDate);
+                    //this.CreateRelatedEntitiesAudits(entityDB, updateDate);
+                    this.GenerateRelatedEntitiesAudits(entityDB, updateDate);
                 }
             }
             catch (Exception ex)
@@ -405,6 +406,7 @@
         }
 
         protected virtual void CreateRelatedEntitiesAudits(T entity, DateTime updateDate) { }
+        protected virtual ServiceResult<Boolean> GenerateRelatedEntitiesAudits(T entity, DateTime updateDate) { return new ServiceResult<Boolean>(true); }
 
         protected virtual void DeleteRelatedEntities(T entity, DateTime updateDate) { }
 

@@ -56,8 +56,14 @@
   <ItemGroup>
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Context\BaseContext.cs" />
+    <Compile Include="Entities\Country.cs" />
+    <Compile Include="Entities\CountryState.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\PersonAudit.cs" />
+    <Compile Include="Entities\Project.cs" />
+    <Compile Include="Entities\ProjectAudit.cs" />
+    <Compile Include="Entities\ProjectUser.cs" />
+    <Compile Include="Entities\ProjectUserAudit.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\UserAudit.cs" />
     <Compile Include="Enums\Sex.cs" />

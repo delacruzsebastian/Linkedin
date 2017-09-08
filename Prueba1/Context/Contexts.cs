@@ -24,6 +24,18 @@ namespace Prueba1.Context
         IDbSet<User> users;
         public IDbSet<User> Users => users ?? (users = base.Set<User>());
 
+        IDbSet<Country> countries;
+        public IDbSet<Country> Countries => countries ?? (countries = base.Set<Country>());
+
+        IDbSet<CountryState> countryStates;
+        public IDbSet<CountryState> CountryStates => countryStates ?? (countryStates = base.Set<CountryState>());
+
+        IDbSet<Project> projects;
+        public IDbSet<Project> Projects => projects ?? (projects = base.Set<Project>());
+
+        IDbSet<ProjectUser> projectUsers;
+        public IDbSet<ProjectUser> ProjectUsers => projectUsers ?? (projectUsers = base.Set<ProjectUser>());
+
         #endregion
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

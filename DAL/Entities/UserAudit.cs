@@ -30,7 +30,7 @@ namespace DAL.Entities
         public string Email { get; set; }
         public string Password { get; set; }
         public Sex Sex { get; set; }
-        public DateTime BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
         public Boolean Available { get; set; }
         public Guid? CountryId { get; set; }
 
